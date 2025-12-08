@@ -47,23 +47,31 @@ const Navbar = ()=>{
         toggleSidebar()  
     }
 
-    const handelClick1 = ()=>{
+    const handelClick1 = () => {
         const defaultColor = themeMode ? "white" : "#112143";
-
-        reftag.current.style.background = "#22c55e"
-        setTimeout(() => {
-            reftag.current.style.background = defaultColor;
-        }, 100);
+    
+        if (reftag.current) {
+            reftag.current.style.background = "#22c55e"
+            setTimeout(() => {
+                if (reftag.current) { 
+                   reftag.current.style.background = defaultColor;
+                }
+            }, 100);
+        }
         setClickOn(!clickOn)
     }
-    const handelClick2 = ()=>{
-        reftag1.current.style.background = "#22c55e"
-        setTimeout(() => {
-            reftag1.current.style.background = "#f0f5ff"
-        }, 100);
+
+    const handelClick2 = () => {
+        if (reftag1.current) { 
+            reftag1.current.style.background = "#22c55e"
+            setTimeout(() => {
+                if (reftag1.current) { 
+                    reftag1.current.style.background = "#f0f5ff"
+                }
+            }, 100);
+        }
         setBellOn(!bellOn)
     }
-
 
     return(
         <>
